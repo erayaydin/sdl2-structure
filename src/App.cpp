@@ -7,6 +7,7 @@ const char* SCREEN_TITLE = "Game Name";
 App::App() {
 	Surf_Display = NULL;
 	Window = NULL;
+	Surf_Test = NULL;
 
 	Running = true;
 }
@@ -47,6 +48,11 @@ bool App::OnInit() {
 
 	SDL_FillRect(Surf_Display, NULL, SDL_MapRGB(Surf_Display->format, 0xFF, 0xFF, 0xFF));
 
+	if((Surf_Test = Surface::OnLoad("/home/eray/Development/C++/SDL/example1/bin/test.bmp")) == NULL) {
+		std::cout << "Hoppa!" << std::endl;
+		return false;
+	}
+
 	return true;
 }
 
@@ -81,11 +87,16 @@ void App::OnLoop() {
 }
 
 void App::OnRender() {
+	Surface::OnDraw(Surf_Display, Surf_Test, 0, 0);
+
 }
 
 void App::OnCleanup() {
 	SDL_DestroyWindow(Window);
 	Surf_Display = NULL;
+
+	SDL_FreeSurface(Surf_Test);
+	Surf_Test = NULL;
 
 	SDL_Quit();
 }

@@ -2,6 +2,7 @@
 #define _APP_H_
 
 #include <SDL2/SDL.h>
+#include "Surface.h"
 #include <iostream>
 
 class App {
@@ -11,6 +12,8 @@ class App {
 		SDL_Surface* Surf_Display;
 
 		SDL_Window* Window;
+
+		SDL_Surface* Surf_Test;
 	
 	public:
 		App();
