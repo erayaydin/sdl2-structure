@@ -2,6 +2,7 @@
 #define _APP_H_
 
 #include <SDL2/SDL.h>
+#include <iostream>
 
 class App {
 	private:

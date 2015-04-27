@@ -54,6 +54,26 @@ void App::OnEvent(SDL_Event* Event) {
 	if(Event->type == SDL_QUIT) {
 		Running = false;
 	}
+
+	if(Event->type == SDL_KEYDOWN) {
+		switch(Event->key.keysym.sym) {
+			case SDLK_UP:
+				std::cout << "Up pressed!" << std::endl;
+			break;
+
+			case SDLK_DOWN:
+				std::cout << "Down pressed!" << std::endl;
+			break;
+
+			case SDLK_LEFT:
+				std::cout << "Left pressed!" << std::endl;
+			break;
+
+			case SDLK_RIGHT:
+				std::cout << "Right pressed!" << std::endl;
+			break;
+		}
+	}
 }
 
 void App::OnLoop() {
