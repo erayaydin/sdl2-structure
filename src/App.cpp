@@ -47,8 +47,6 @@ bool App::OnInit() {
 
 	SDL_FillRect(Surf_Display, NULL, SDL_MapRGB(Surf_Display->format, 0xFF, 0xFF, 0xFF));
 
-	SDL_UpdateWindowSurface(Window);
-
 	return true;
 }
 
@@ -59,6 +57,7 @@ void App::OnEvent(SDL_Event* Event) {
 }
 
 void App::OnLoop() {
+	SDL_UpdateWindowSurface(Window);
 }
 
 void App::OnRender() {
